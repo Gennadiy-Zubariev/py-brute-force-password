@@ -28,7 +28,7 @@ def check_in_passwords(args: tuple) -> dict:
     start, end = args
     found = {}
     for number in range(start, end):
-        candidate = f"{number: 08d}"
+        candidate = f"{number:08d}"
         hash_candidate = sha256_hash_str(candidate)
         if hash_candidate in PASSWORDS_TO_BRUTE_FORCE:
             found[candidate] = hash_candidate
